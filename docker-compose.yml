@@ -13,9 +13,7 @@ services:
     php:
         container_name: app-container
         build: ./Docker/php
-        restart: always
-        ports:
-            - "2222:22"
+        restart: alway
         expose:
             - "9000"
             - "9001"
