@@ -15,12 +15,12 @@ make spawn
 > This is WIP, has some value probably, but requires some work to be done. Dont kill me before removing ***this*** note ;)
 ##### DB config
 ```
-bound port to host 3306
-
-MYSQL_ROOT_PASSWORD: 1234
-MYSQL_DATABASE: symfony
-MYSQL_USER: symfony
-MYSQL_PASSWORD: symfony
+bound port to host env:MYSQL_PORT=3306
+env:MYSQL_PORT=3306
+env:MYSQL_ROOT_PASSWORD=1234
+env:MYSQL_DATABASE_NAME=symfony
+env:MYSQL_USER_NAME=symfony
+env:MYSQL_USER_PASSWORD=symfony
 ```
 
 ##### PHP 
@@ -33,7 +33,7 @@ volume bound:
 
 ##### Nginx
 ```
-port bound to host 80
+port bound to host env:NGINX_PORT=80
 linked: php
 volumes bound:
     ./code -> /app
